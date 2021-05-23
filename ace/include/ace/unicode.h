@@ -1,7 +1,7 @@
 /**
- * @file   unicode.h
- * @author Pratchaya Khansomboon (pratchaya.k.git@gmail.com)
- * @brief  Unicode decoder
+ * @file    unicode.h
+ * @author  Pratchaya Khansomboon (pratchaya.k.git@gmail.com)
+ * @brief   Unicode decoder
  * @version 0.1
  * @date 2021-05-18
  *

@@ -21,6 +21,31 @@ constexpr auto PENGUIN_SPRITE =
     L"      /|  \\\\     "
     L"      '|  ||     "
     L"       _\\_):,_   ";
+
+constexpr auto JOYSTICK_SPRITE = 
+    L"     __\n" 
+    L"    (  )\n" 
+    L"     ||\n"
+    L"     ||\n"
+    L" ___|  |__.._\n" 
+    L"/____________\\\n"
+    L"\\____________/~~~.\n";
+
+constexpr auto DOLPHIN_SPRITE =
+L"                              _.\n"
+L"                             / (\n"
+L"                            /  |\n"
+L"                           /   |\n"
+L"            ,.____________/    (______,                   .__ \n"
+L"       ,_--'                           \"----._.          / /  \n"
+L"     ,\"                                        \"---____ /  ;  \n"
+L" ___/._-                                               `--'_ \n"
+L"(___   9                                 ,._____.         / \\  \n"
+L" `---`,     |   \\               ,___.---'        `-------',  `-,\n"
+L"       `--__\\    |________.----'                          \\___/\n"
+L"             \\   |\n"
+L"              \\  |\n"
+L"               \\_;\n";
 // clang-format on
 
 auto main(int argc, char const* argv[]) -> int {
@@ -30,6 +55,8 @@ auto main(int argc, char const* argv[]) -> int {
 
     ace::sprite sprite(6, 4, PENGUIN_SMALL_SPRITE);
     ace::sprite sprite1(17, 6, PENGUIN_SPRITE);
+    ace::sprite spritejoystick(JOYSTICK_SPRITE);
+    ace::sprite dolphin(DOLPHIN_SPRITE);
 
     bool isRunning = true;
 
@@ -40,6 +67,10 @@ auto main(int argc, char const* argv[]) -> int {
     version += std::to_wstring(display.get_version().MAJOR) + L".";
     version += std::to_wstring(display.get_version().MINOR) + L".";
     version += std::to_wstring(display.get_version().PATCH);
+
+    std::wstring sprite_info = std::to_wstring(spritejoystick.width());
+    sprite_info += L",";
+    sprite_info += std::to_wstring(spritejoystick.height());
 
     while (isRunning) {
         auto input = display.key();
@@ -53,7 +84,10 @@ auto main(int argc, char const* argv[]) -> int {
         display.clear();
         display.draw(std::round(x), std::round(y), sprite);
         display.draw(0, 2, sprite1);
+        display.draw(10, 10, spritejoystick);
+        display.draw(50, 5, dolphin);
         display.print(0, 0, version);
+        display.print(0, 1, sprite_info);
         display.show();
 
         usleep(16666);

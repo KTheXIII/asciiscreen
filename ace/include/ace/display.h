@@ -1,3 +1,13 @@
+/**
+ * @file    display.h
+ * @author  Pratchaya Khansomboon (pratchaya.k.git@gmail.com)
+ * @brief   Display abstraction for rendering to terminal screen.
+ * @version 0.1
+ * @date 2021-05-23
+ *
+ * @copyright Copyright (c) 2021
+ *
+ */
 #pragma once
 
 #include <memory>

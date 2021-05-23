@@ -20,10 +20,7 @@ namespace ace {
         sprite(const int32_t& width, const int32_t& height);
         sprite(const int32_t& width, const int32_t& height,
                const wchar_t* rawsprite);
-        sprite(const int32_t& width, const int32_t& height,
-               const char* rawsprite);
         sprite(const wchar_t* rawsprite);
-        sprite(const char* rawsprite);
         ~sprite();
 
         int32_t width() const { return m_width; }
